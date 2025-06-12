@@ -1,0 +1,463 @@
+/* Importação de Fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Variáveis CSS para Cores */
+:root {
+    --color-primary: #28a745; /* Verde vibrante */
+    --color-secondary: #007bff; /* Azul */
+    --color-dark: #343a40; /* Cinza escuro */
+    --color-light: #f8f9fa; /* Cinza claro */
+    --color-text: #495057; /* Texto geral */
+    --color-white: #ffffff;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--color-primary);
+}
+
+/* Botões */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Um verde um pouco mais escuro */
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background-color: #0056b3; /* Um azul um pouco mais escuro */
+    transform: translateY(-2px);
+}
+
+.btn-text {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.btn-text:hover {
+    color: var(--color-dark);
+}
+
+
+/* Seções Gerais */
+.section-padded {
+    padding: 60px 0;
+}
+
+.section-padded h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-dark);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bg-light {
+    background-color: var(--color-light);
+}
+
+/* Seção Hero (Página Inicial) */
+.hero {
+    background: url('https://via.placeholder.com/1920x800?text=Paisagem+Rural+Campo+Largo') no-repeat center center/cover;
+    color: var(--color-white);
+    text-align: center;
+    padding: 120px 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before { /* Camada escura sobre a imagem */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Escurece a imagem para o texto se destacar */
+}
+
+.hero-content {
+    position: relative; /* Para garantir que o conteúdo fique acima da camada escura */
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: var(--color-white); /* Garante que o título seja branco */
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: var(--color-white);
+}
+
+/* Seção Sobre Nós - Grid de Valores */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.value-item {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.value-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+/* Pilares - Grid de Pilares */
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.pillar-item {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.pillar-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+/* Projetos - Cards */
+.project-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-dark);
+    padding: 15px 15px 0;
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    padding: 0 15px 15px;
+    font-size: 0.95rem;
+}
+
+.project-card .btn-secondary {
+    margin: 0 15px 15px;
+    width: calc(100% - 30px); /* Preenche a largura do card */
+    text-align: center;
+}
+
+/* Notícias - Grid */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.news-item {
+    background-color: var(--color-white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.news-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.news-item .date {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+/* Contato - Formulário */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    align-self: flex-start; /* Alinha o botão à esquerda */
+}
+
+/* Chamada para Ação (Participe!) */
+.call-to-action-section {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.call-to-action-section h2 {
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.call-to-action-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas menores */
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-links img {
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Permite que os itens do menu quebrem a linha */
+        justify-content: center;
+    }
+
+    header nav ul li {
+        margin: 5px 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .section-padded {
+        padding: 40px 0;
+    }
+
+    .section-padded h2 {
+        font-size: 2rem;
+    }
+
+    .values-grid, .pillars-grid, .project-card-grid, .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta-buttons .btn-primary, .cta-buttons .btn-secondary {
+        width: 80%; /* Botões maiores em telas menores */
+        margin: 0 auto;
+    }
+
+    footer .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav ul li {
+        margin: 5px 5px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 8px 15px;
+    }
+}
